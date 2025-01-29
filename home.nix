@@ -1,4 +1,9 @@
 {
+  imports = [
+    ./programs/neovim.nix
+    ./programs/git.nix
+  ];
+
   home = rec {
     username="cannotflypig";
     homeDirectory = "/home/${username}";
