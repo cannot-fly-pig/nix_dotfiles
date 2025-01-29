@@ -12,6 +12,7 @@
   };
 
   home.packages = [
+    pkgs.wget
     pkgs.vscode
   ];
 
