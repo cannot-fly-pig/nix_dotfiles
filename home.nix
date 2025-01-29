@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ./programs/neovim.nix
     ./programs/git.nix
@@ -10,5 +10,10 @@
     homeDirectory = "/home/${username}";
     stateVersion = "24.05";
   };
+
+  home.packages = [
+    pkgs.vscode
+  ];
+
   programs.home-manager.enable = true;
 }
