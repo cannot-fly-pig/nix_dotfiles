@@ -2,6 +2,7 @@
   imports = [
     ./programs/neovim.nix
     ./programs/git.nix
+    ./programs/zsh.nix
   ];
 
   home = rec {
