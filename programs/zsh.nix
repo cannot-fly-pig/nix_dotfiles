@@ -1,8 +1,19 @@
 {pkgs, ...}: {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+    initExtra = "source <(fzf --zsh)";
+    zplug = {
+      enable = true;
+      plugins = [
+       { name = "zsh-users/zsh-completions"; }
+       { name = "zsh-users/zsh-autosuggestions"; }
+       { name = "zsh-users/zsh-syntax-highlighting"; }
+       { name = "olets/zsh-abbr"; }
+      ];
+    };
+  };
+
+  programs.fzf = {
+    enable = true;
   };
 }
