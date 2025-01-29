@@ -3,7 +3,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
-    sheldon.url = "github:rossmacarthur/sheldon";
     home-manager = {
      url = "github:nix-community/home-manager";
      inputs.nixpkgs.follows = "nixpkgs";
@@ -33,7 +32,7 @@
       myHome = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = import inputs.nixpkgs {
         system = "x86_64-linux";
-		config.allowUnfree = true;
+	  config.allowUnfree = true;
         };
         extraSpecialArgs = {
           inherit inputs;

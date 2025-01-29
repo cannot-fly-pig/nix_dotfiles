@@ -3,7 +3,6 @@
     ./programs/neovim.nix
     ./programs/git.nix
     ./programs/zsh.nix
-    ./programs/starship.nix
   ];
 
   home = rec {
