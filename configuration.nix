@@ -11,8 +11,6 @@
   wsl.enable = true;
   wsl.defaultUser = "cannotflypig";
 
-  programs.zsh.enable = true;
-
   users.users.cannotflypig = {
     shell = pkgs.zsh;
   };
@@ -21,6 +19,16 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
     };
+  };
+
+  environment.systemPackages = with pkgs; [
+    wget
+    nix-ld-rs
+  ];
+
+  programs = {
+    nix-ld.enable = true;
+    zsh.enable = true;
   };
 
 

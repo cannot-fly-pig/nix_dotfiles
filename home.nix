@@ -11,10 +11,5 @@
     stateVersion = "24.05";
   };
 
-  home.packages = [
-    pkgs.wget
-    pkgs.vscode
-  ];
-
   programs.home-manager.enable = true;
 }
