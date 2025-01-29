@@ -10,6 +10,9 @@
        { name = "zsh-users/zsh-syntax-highlighting"; }
       ];
     };
+    shellAliases = {
+      clip = "clip.exe";
+    };
   };
 
   programs.fzf = {

@@ -9,7 +9,6 @@ opt.wrap = true
 opt.termguicolors = true
 opt.autoread = true
 opt.scrolloff = 8
-opt.noswapfile = true
 
 require("hlchunk").setup({
   chunk = {
