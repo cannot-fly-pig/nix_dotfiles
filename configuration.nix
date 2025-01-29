@@ -8,16 +8,19 @@
 { config, lib, pkgs, ... }:
 
 {
-  #imports = [
-  #  # include NixOS-WSL modules
-  #  <nixos-wsl/modules>
-  #];
-
   wsl.enable = true;
   wsl.defaultUser = "cannotflypig";
 
+  programs.zsh.enable = true;
+
   users.users.cannotflypig = {
     shell = pkgs.zsh;
+  };
+
+  nix = {
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+    };
   };
 
 
