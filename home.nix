@@ -16,6 +16,9 @@
     pkgs.gcc12
     unzip
     deno
+    ccls
+    typescript
+    typescript-language-server
   ];
 
   programs.home-manager.enable = true;
