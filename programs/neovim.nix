@@ -20,6 +20,12 @@
       nerdcommenter
       vim-repeat
       bufferline-nvim
+      denops-vim
+      ddc-vim
+      ddc-ui-native
+      ddc-source-around
+      ddc-filter-matcher_head
+      ddc-filter-sorter_rank
     ];
   };
 

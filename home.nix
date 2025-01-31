@@ -13,6 +13,9 @@
 
   home.packages = with pkgs; [
     ripgrep
+    pkgs.gcc12
+    unzip
+    deno
   ];
 
   programs.home-manager.enable = true;

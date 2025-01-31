@@ -64,3 +64,26 @@ vim.keymap.set('t', '<C-l>', '<cmd>FloatermNext<cr>')
 vim.keymap.set('n', '<C-h>', '<cmd>bprev<cr>')
 vim.keymap.set('n', '<C-l>', '<cmd>bnext<cr>')
 vim.keymap.set('n', '<C-q>', '<cmd>bdelete<cr>')
+
+vim.fn['ddc#custom#patch_global']({
+  ui = {
+    'native'
+  },
+  sources = {
+    'around'
+  },
+  sourceOptions = {
+    ['_'] = {
+      matchers = {
+        'matcher_head',
+      },
+      sorters = {
+        'sorter_rank'
+      }
+    }
+  }
+})
+
+vim.fn["ddc#custom#load_config"](vim.fs.joinpath("ddc", "ddc.ts"))
+
+vim.fn['ddc#enable']()
