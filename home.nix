@@ -19,6 +19,12 @@
     ccls
     typescript
     typescript-language-server
+    freeglut
+    freeglut.dev
+    gnumake
+    nix-index
+    jdk23
+    python
   ];
 
   programs.home-manager.enable = true;

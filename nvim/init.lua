@@ -191,3 +191,31 @@ vim.keymap.set('i', '<S-TAB>',
 , { noremap = false, expr = true })
 
 
+local function get_visual_lines(opts)
+  if vim.fn.mode() == 'n' then
+    return vim.fn.getline(opts.line1, opts.line2)
+  else
+    local lines = vim.fn.getregion(vim.fn.getpos('v'), vim.fn.getpos('.'), { type = vim.fn.mode() })
+    vim.cmd([[ execute "normal! \<ESC>" ]])
+    return lines
+  end
+end
+
+local function copy_visual_lines(opts)
+  local text = vim.fn.join(get_visual_lines(opts) or {}, '\n')
+  local copyFile = io.open('/tmp/copy.txt', "w")
+  if copyFile then
+    copyFile:write(text)
+    copyFile:close()
+  end
+  io.popen('cat /tmp/copy.txt | /mnt/c/windows/system32/clip.exe')
+end
+
+vim.api.nvim_create_user_command('CopyVisualLines', function(opts)
+  copy_visual_lines(opts)
+end, {
+  range = 0,
+})
+
+vim.keymap.set('v', '<C-y>', copy_visual_lines)
+vim.keymap.set('n', '<C-y>', copy_visual_lines)

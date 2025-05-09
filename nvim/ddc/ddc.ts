@@ -53,6 +53,7 @@ export class Config extends BaseConfig {
         "typescriptreact",
         "tsx",
         "graphql",
+        "c",
         "cpp"
       ]
     ) {
